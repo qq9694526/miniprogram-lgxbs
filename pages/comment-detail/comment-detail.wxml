@@ -1,0 +1,44 @@
+<!--pages/comment-detail/comment-detail.wxml-->
+<view class='container'>
+  <form class='form' bindsubmit='submitComment'>
+    <textarea class='textarea' placeholder="师傅怎么样？快来评价一下吧！" name="evaluationContent"></textarea>
+    <view class='star-list' bindtap='clickStar'>
+      <view class='item'>
+        <text class='label'>是否准时</text>
+        <view class='star-wrap' wx:for="{{5}}">
+          <image wx:if="{{index<stars[0]}}" src='/img/star1.png' data-index="0-{{index}}"></image>
+          <image wx:else src='/img/star0.png' data-index="0-{{index}}"></image>
+        </view>
+      </view>
+      <view class='item'>
+        <text class='label'>服务态度</text>
+        <view class='star-wrap' wx:for="{{5}}">
+          <image wx:if="{{index<stars[1]}}" src='/img/star1.png' data-index="1-{{index}}"></image>
+          <image wx:else src='/img/star0.png' data-index="1-{{index}}"></image>
+        </view>
+      </view>
+      <view class='item'>
+        <text class='label'>服务质量</text>
+        <view class='star-wrap' wx:for="{{5}}">
+          <image wx:if="{{index<stars[2]}}" src='/img/star1.png' data-index="2-{{index}}"></image>
+          <image wx:else src='/img/star0.png' data-index="2-{{index}}"></image>
+        </view>
+      </view>
+    </view>
+    <view class='image-list'>
+      <view class='item' bindtap='chooseImage'>
+        <image src='/img/s-pj-sc.png' mode='widthFix'></image>
+      </view>
+      <view wx:if=" {{images[0]}} " class='item'>
+        <image src='{{images[0]}}' mode='widthFix'></image>
+      </view>
+      <view wx:if="{{images[1]}} " class='item'>
+        <image src='{{images[1]}}' mode='widthFix'></image>
+      </view>
+      <view wx:if="{{images[2]}} " class='item'>
+        <image src='{{images[2]}}' mode='widthFix'></image>
+      </view>
+    </view>
+    <button class='btn-fixed-bottom' form-type='submit'>提交评论</button>
+  </form>
+</view>

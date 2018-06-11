@@ -1,0 +1,87 @@
+<!--pages/user-center/user-center.wxml-->
+<view class='container'>
+  <view class='user'>
+    <!-- <navigator url="../user-edit/user-edit"> -->
+    <image class='userimg' src='{{user.userFlag==0?user.userPhoto:worker.workPhoto}}'></image>
+    <!-- </navigator> -->
+    <view class='userinfo'>
+      <text class='username'>{{user.userFlag==0?user.userName:worker.userName}}</text>
+    </view>
+    <navigator wx:if="{{user.userFlag==1}}" class='arrow' url='../user-detail/user-detail'>
+      <image src='/img/arrow-white.png'></image>
+    </navigator>
+  </view>
+
+  <view wx:if="{{user.userFlag==0}}" class='book'>
+    <navigator class='item' url='../book-release/book-release'>
+      <image class='icon' src='/img/user/wd-fabu.png'></image>
+      <text class='text'>发布预约</text>
+    </navigator>
+    <navigator class='item' url='../order-list/order-list?isbook=1'>
+      <image class='icon' src='/img/user/wd-yyjl.png'></image>
+      <text class='text'>预约记录</text>
+    </navigator>
+  </view>
+  <view wx:else class='book'>
+    <navigator class='item' url='../user-account/user-account'>
+      <image class='icon' src='/img/user/wd-fabu.png'></image>
+      <text class='text'>我的钱包</text>
+    </navigator>
+    <navigator class='item' url='../order-list-worker/order-list-worker'>
+      <image class='icon' src='/img/user/wd-yyjl.png'></image>
+      <text class='text'>我的订单</text>
+    </navigator>
+  </view>
+  <view wx:if="{{user.userFlag==0}}" class='order'>
+    <view class='title'>
+      <text>我的订单</text>
+      <navigator class='right' url='../order-list/order-list'>
+        <text>全部订单</text>
+        <image class='arrow' src='/img/user/arrow.png'></image>
+      </navigator>
+    </view>
+    <view class='menu'>
+      <navigator class='item' url='../order-list/order-list?status=2'>
+        <image class='icon' src='/img/user/wd-dwg.png'></image>
+        <text class='text'>待完工</text>
+      </navigator>
+      <navigator class='item' url='../order-list/order-list?status=3'>
+        <image class='icon' src='/img/user/wd-dfk.png'></image>
+        <text class='text'>待付款</text>
+      </navigator>
+      <navigator class='item' url='../order-list/order-list?status=4'>
+        <image class='icon' src='/img/user/wd-dpj.png'></image>
+        <text class='text'>待评价</text>
+      </navigator>
+    </view>
+  </view>
+  <view wx:if="{{user.userFlag==0}}" class='list'>
+    <view class='row' bindtap='chooseAddress'>
+      <view class='left'>
+        <image class='icon' src='/img/user/wd-dz.png'></image>
+        <text class='text'>我的地址</text>
+      </view>
+      <image class='arrow' src='/img/user/arrow.png'></image>
+    </view>
+
+    <!-- <navigator class='row' url='../user-account/user-account'>
+      <view class='left'>
+        <image class='icon' src='/img/user/wd-dz.png'></image>
+        <text class='text'>我的钱包（仅零工，临时入口）</text>
+      </view>
+      <image class='arrow' src='/img/user/arrow.png'></image>
+    </navigator> -->
+  </view>
+  <view class='list'>
+      <view class='row'>
+      <view class='left'>
+        <image class='icon' src='/img/user/wd-tel.png'></image>
+        <text class='text'>联系客服</text>
+      </view>
+      <view class='right' bindtap='callPhone'>
+        <text>0371—55313833</text>
+      <image class='arrow' src='/img/user/arrow.png'></image>
+      </view>
+    </view>
+  </view>
+</view>

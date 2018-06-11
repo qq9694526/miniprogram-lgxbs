@@ -1,0 +1,47 @@
+<!--pages/order-confrim/order-confrim.wxml-->
+
+<view class='container'>
+  <view class='address' bindtap='chooseAddress'>
+    <image class='icon' src='/img/address.png'></image>
+    <view wx:if="{{address}}" class='content'>
+      <view class='row1'>
+        <text>{{address.name}}</text>
+        <text class='tel'>{{address.tel}}</text>
+      </view>
+      <text class='row2 text-ellipsis'>{{address.detail}}</text>
+    </view>
+    <view wx:else class='content'>
+      <text class='choose'>请选择服务地址</text>
+    </view>
+    <image class='arrow' src='/img/arrow.png'></image>
+  </view>
+  <view class='graphic-list'>
+    <navigator class='item' url='../worker-detail/worker-detail'>
+      <image class='img' src='/img/placeholder.png'></image>
+      <view class='right'>
+        <view class='row1'>
+          <text>{{worker.userName}}</text>
+        </view>
+        <view class='row3'>
+          <text class='time'>简介</text>
+          <text class='time'>{{worker.userDesc}}</text>
+        </view>
+        <view class='row3'>
+          <text class='time'>单价</text>
+          <text class='time'>{{worker.workPrice}}{{worker.workPriceUnit}}</text>
+        </view>
+        <!-- <view class='row3'>
+          <text class='time'>预约时间</text>
+          <text class='time'>2017-08-29 9：29</text>
+        </view> -->
+      </view>
+    </navigator>
+  </view>
+  <form bindsubmit='submitOrder'>
+    <view class='tip-wrap'>
+      <text class='label'>服务描述</text>
+      <textarea class='textarea' name='desc' placeholder='一些备注信息'></textarea>
+    </view>
+    <button class='btn-fixed-bottom' formType='submit'>提交订单</button>
+  </form>
+</view>

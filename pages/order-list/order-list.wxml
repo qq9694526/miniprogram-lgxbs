@@ -1,0 +1,66 @@
+<!--pages/order-list/order-list.wxml-->
+<import src="../../tpl/nodata/nodata.wxml" />
+<view class='container'>
+  <view class='tabbar' bindtap='changeItem'>
+    <text wx:for="{{tabbarArr}}" class='item {{activeItem==item?"active":""}}' data-index='{{item}}'>{{orderStateArr[item]}}</text>
+  </view>
+  <view>
+    <view wx:if="{{list[activeItem].length===0}}" class='notask-wrap'>
+      <template is="nodata" data="{{text:'您还没有相关订单'}}" />
+    </view>
+    <view wx:elif="{{isbook}}" class='book-card'>
+      <view wx:for="{{list[activeItem]}}" class='item'>
+        <view class='title'>
+          <text>预约状态</text>
+          <text class='color-green'>{{orderStateArr[item.orderState]}}</text>
+        </view>
+        <navigator url='../order-detail/order-detail?id={{item.id}}&isbook=1'>
+
+          <view class='row'>
+            <image class='icon' src='/img/order/name.png'></image>
+            <text>{{item.advanceName}}</text>
+          </view>
+          <view class='row'>
+            <image class='icon' src='/img/order/time.png'></image>
+            <text>{{item.serviceTime}}</text>
+          </view>
+          <view class='row text-ellipsis'>
+            <image class='icon' src='/img/order/address.png'></image>
+            <text>{{item.userAddress}}</text>
+          </view>
+        </navigator>
+        <view class='btn-wrap'>
+          <text wx:if="{{item.orderState==1}}" class='btn' bindtap='cancelOrder' data-id="{{item.id}}" data-worker-id="{{item.workerId}}">取消订单</text>
+          <text wx:elif="{{item.orderState==2}}" class='btn' bindtap='confirmOver' data-id="{{item.id}}" data-worker-id="{{item.workerId}}">确认完工</text>
+          <text wx:elif="{{item.orderState==3}}" class='btn' bindtap='bindPay' data-id="{{item.id}}">去支付</text>
+          <text wx:elif="{{item.orderState==4}}" class='btn' bindtap='goComment' data-order-id="{{item.id}}" data-worker-id="{{item.workerId}}">评价</text>
+        </view>
+      </view>
+    </view>
+    <view wx:else class='graphic-list'>
+      <view wx:for="{{list[activeItem]}}" class='item-wrap'>
+        <navigator class='item' url='../order-detail/order-detail?id={{item.id}}'>
+          <image class='img' src='/img/placeholder.png'></image>
+          <view class='right'>
+            <view class='row1'>
+              <text>{{item.workerName}}</text>
+            </view>
+            <view class='row2 text-ellipsis2'>
+              <text>服务说明：{{item.serviceDesc}}</text>
+            </view>
+            <view class='row3'>
+              <text class='price'>￥{{item.orderPrice}}</text>
+              <!-- <text class='time'>服务6次</text> -->
+            </view>
+          </view>
+        </navigator>
+        <view class='btn-wrap'>
+          <text wx:if="{{item.orderState==1}}" class='btn-green' bindtap='cancelOrder' data-id="{{item.id}}" data-worker-id="{{item.workerId}}">取消订单</text>
+          <text wx:elif="{{item.orderState==2}}" class='btn-green' bindtap='confirmOver' data-id="{{item.id}}" data-worker-id="{{item.workerId}}">确认完工</text>
+          <text wx:elif="{{item.orderState==3}}" class='btn-green' bindtap='bindPay' data-id="{{item.id}}">去支付</text>
+          <text wx:elif="{{item.orderState==4}}" class='btn-green' bindtap='goComment' data-order-id="{{item.id}}" data-worker-id="{{item.workerId}}">评价</text>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>

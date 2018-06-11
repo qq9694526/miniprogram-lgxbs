@@ -1,0 +1,30 @@
+/* pages/account-list/account-list.wxss */
+@import "../../tpl/nodata/nodata.wxss";
+page{
+  padding: 0 30rpx;
+  box-sizing: border-box;
+}
+.item{
+  background-color: #fff;
+  border-radius: 20rpx;
+  margin-top: 30rpx;
+  padding: 30rpx;
+  line-height: 1;
+}
+.item .row{
+  display: flex;
+  justify-content: space-between;
+}
+.color-green{
+  color: #57d2a0;
+}
+.item .row1 {
+  margin-bottom: 30rpx;
+}
+.item .row1 text{
+  font-size: 30rpx;
+}
+.item .row2 text{
+  /* font-size: 20rpx; */
+  color: #999;
+}

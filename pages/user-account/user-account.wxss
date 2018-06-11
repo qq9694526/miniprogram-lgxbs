@@ -1,0 +1,38 @@
+/* pages/user-account/user-account.wxss */
+.top{
+  padding: 100rpx 40rpx;
+  background: -webkit-linear-gradient(left, #57d2a0, #8ee3ad);
+  text-align: center;
+}
+.top .money{
+  font-size: 84rpx;
+  color: #fff;
+}
+.row {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #eee;
+  padding: 30rpx;
+  background-color: #fff;
+  margin-top: 20rpx;
+}
+
+.row .left {
+  display: flex;
+  align-items: center;
+}
+
+.row .icon {
+  width: 39rpx;
+  height: 47rpx;
+  margin-right: 30rpx;
+}
+
+.row .arrow {
+  width: 25rpx;
+  height: 47rpx;
+  margin-right: 30rpx;
+  vertical-align: middle;
+}

@@ -1,0 +1,6 @@
+{
+  "navigationBarTitleText": "全部评论",
+  "usingComponents": {
+    "component-comment-cell": "/compts/comment-cell/comment-cell"
+  }
+}

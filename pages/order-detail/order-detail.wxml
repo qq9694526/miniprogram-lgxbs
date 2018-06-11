@@ -1,0 +1,102 @@
+<!--pages/order-detail/order-detail.wxml-->
+<view wx:if="{{isbook}}" class='container'>
+  <view wx:if='{{order.workerId}}' class='section'>
+    <text class='title'>工人信息</text>
+    <view class='list-card'>
+      <text class='row'>姓名：胡歌</text>
+      <text class='row'>电话：15638830111</text>
+      <text class='row'>年龄：48岁</text>
+      <text class='row'>工种：批墙</text>
+      <text class='row'>工作经验：4年</text>
+      <text class='row'>预约描述：</text>
+      <textarea placeholder="描述信息 " value='我的哈看到啥的稍等哈说的话的撒肯定还是拉黑 dshakdho对你撒谎到货的 打扫的红道哈达后嗲花的'>
+      </textarea>
+    </view>
+  </view>
+  <view wx:else></view>
+  <view class='section'>
+    <text class='title'>预约信息{{order.orderState!=1?'':' (等待师傅接单中...)'}}</text>
+    <view class='list-card'>
+      <text class='row'>服务名称：{{order.advanceName}}</text>
+      <text class='row'>总价：￥{{order.orderActualPrice}}</text>
+      <text class='row'>联系人：{{order.userName}}</text>
+      <text class='row'>电话：{{order.userMobile}}</text>
+      <text class='row'>服务时间：{{order.serviceTime}}</text>
+      <text class='row'>服务描述：</text>
+      <text class='desc'>{{order.serviceDesc?order.serviceDesc:"暂无 "}}</text>
+    </view>
+  </view>
+</view>
+<view wx:elif="{{isworker}}" class='container'>
+  <view class='section'>
+    <text class='title'>工作内容</text>
+    <view class='list-card'>
+      <text class='row'>服务名称：{{order.advanceName||order.serviceName}}</text>
+      <text class='row'>总价：￥{{order.orderActualPrice}}</text>
+      <text wx:if="{{order.serviceTime}}" class='row'>服务时间：{{order.serviceTime}}</text>
+      <text class='row'>下单时间：{{order.time}}</text>
+      <text class='row'>服务描述：</text>
+      <text class='desc'>{{order.serviceDesc?order.serviceDesc:"暂无 "}}</text>
+    </view>
+  </view>
+  <view class='section'>
+    <text class='title'>客户信息</text>
+    <view class='list-card'>
+      <text class='row'>姓名：{{order.userName}}</text>
+      <text class='row'>电话：{{order.userMobile}}</text>
+      <text class='row'>联系地址：{{order.userAddress}}</text>
+    </view>
+  </view>
+</view>
+<view wx:else class='container'>
+  <view class='address'>
+    <image class='icon' src='/img/address.png'></image>
+    <view class='content'>
+      <view class='row1'>
+        <text>{{order.userName}}</text>
+        <text class='tel'>{{order.userMobile}}</text>
+      </view>
+      <text class='row2 text-ellipsis'>{{order.userAddress}}</text>
+    </view>
+  </view>
+  <view class='main'>
+    <view class='list'>
+      <view class='row'>
+        <text class='label'>订单状态</text>
+        <text>{{orderStateArr[order.orderState]}}</text>
+      </view>
+      <view class='row'>
+        <text class='label'>服务名称</text>
+        <text>{{order.advanceName||order.serviceName}}</text>
+      </view>
+      <view class='row'>
+        <text class='label'>师傅姓名</text>
+        <text>{{order.workerName}}</text>
+      </view>
+    </view>
+  </view>
+  <view class='list'>
+    <view class='row space-between'>
+      <text class='label'>订单编号</text>
+      <text>{{order.orderSn}}</text>
+    </view>
+    <view class='row space-between'>
+      <text class='label'>下单时间</text>
+      <text>{{order.time}}</text>
+    </view>
+    <view class='row space-between'>
+      <text class='label'>订单总价</text>
+      <text>{{order.orderActualPrice}}元</text>
+    </view>
+  </view>
+</view>
+<view wx:if="{{user.userFlag==0}}" class='btn-wrap'>
+   <text wx:if="{{order.orderState==1}}" class='btn grey' bindtap='cancelOrder'>取消订单</text> 
+  <text wx:elif="{{order.orderState==2}}" class='btn' bindtap='confirmOver'>确认已完工</text>
+   <text wx:elif="{{order.orderState==3}}" class='btn' bindtap='goPay'>去支付</text> 
+   <text wx:elif="{{order.orderState==4}}" class='btn' bindtap='goComment'>去评价</text> 
+</view>
+<view wx:elif="{{isworker}}" class='btn-wrap'>
+  <text wx:if="{{order.orderState==1}}" class='btn' bindtap='grabOrder'>立即抢单</text> 
+  <text wx:if="{{order.orderState==2}}" class='btn' bindtap='cancelOrder'>取消订单</text> 
+</view>

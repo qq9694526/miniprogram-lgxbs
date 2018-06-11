@@ -1,0 +1,21 @@
+/* pages/order-confrim/order-confrim.wxss */
+.graphic-list{
+  padding: 0;
+}
+.graphic-list .time{
+  font-size: 28rpx;
+}
+.graphic-list .right{
+  height: 150rpx;
+}
+.tip-wrap{
+  background-color: #fff;
+}
+.tip-wrap .label{
+  display: block;
+  padding: 20rpx 30rpx;
+  border-bottom: 1px solid #efefef;
+}
+.tip-wrap .textarea{
+  padding: 20rpx;
+}

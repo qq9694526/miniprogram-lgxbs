@@ -1,0 +1,70 @@
+<!--index.wxml-->
+<view class="container">
+
+  <navigator class='user' url='../user-center/user-center'>
+    <image src='/img/wode-ico.png'></image>
+  </navigator>
+  <swiper class="section" autoplay='true' indicator-dots="true">
+    <swiper-item wx:for="{{banner}}">
+      <image src="{{item.imageUrl}}" class="slide-image" style='width:100%' mode='widthFix' />
+    </swiper-item>
+  </swiper>
+  <view class='section grid-wrap'>
+    <navigator class='item' wx:for="{{workCates}}" url='../worker-list/worker-list?cate={{item.id}}'>
+      <image src='{{item.picturreUrl}}' mode='widthFix'></image>
+      <text>{{item.clfcName}}</text>
+    </navigator>
+    <navigator class='item' url='../worker-list/worker-list?id=0'>
+      <image src='/img/allclass.png' mode='widthFix'></image>
+      <text>全部</text>
+    </navigator>
+  </view>
+  <view wx:if="{{user.userFlag==1}}" class='section'>
+    <view class='section-title'>
+      <text>客户直约</text>
+    </view>
+    <view class='graphic-list'>
+      <view wx:for="{{order}}" class='item' bindtap='goBookDetail' data-id='{{item.id}}'>
+        <image class='img' src='{{item.userPhoto}}'></image>
+        <view class='right'>
+          <view class='row1'>
+            <text>{{item.advanceName}}</text>
+          </view>
+          <view class='row3'>
+            <text class='time'>{{item.serviceTime}}</text>
+            <text class='price'>￥{{item.orderPrice}}</text>
+          </view>
+          <view class='row4 '>
+            <text class='desc text-ellipsis2'>{{item.serviceDesc?item.serviceDesc:"暂无描述"}}</text>
+            <text class='btn' catchtap='grabOrder' data-id='{{item.id}}'>立即抢单</text>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+  <view wx:else class='section'>
+    <view class='section-title'>
+      <text>金牌师傅</text>
+    </view>
+    <view class='graphic-list'>
+      <navigator wx:for="{{workInfos}}" class='item' url='../worker-detail/worker-detail?id={{item.id}}'>
+        <image class='img' src='{{item.workPhoto}}'></image>
+        <view class='right'>
+          <view class='row1'>
+            <text>{{item.userName}}</text>
+            <view class='stars' wx:for="{{[1,2,3,4,5]}}" wx:for-item="n">
+              <image wx:if="{{item.userPoint>=n}}" src='/img/star1.png'></image>
+            </view>
+          </view>
+          <view class='row2 text-ellipsis2'>
+            <text>服务说明：{{item.workContent}}</text>
+          </view>
+          <view class='row3'>
+            <text class='price'>{{item.workPrice}}{{item.workPriceUnit}}</text>
+            <text class='time'>服务{{item.workCount}}次</text>
+          </view>
+        </view>
+      </navigator>
+    </view>
+  </view>
+</view>

@@ -1,0 +1,6 @@
+<!--pages/worker-comment/worker-comment.wxml-->
+  <view class='container'>
+    <view class='list'>
+      <component-comment-cell wx:for="{{list}}" comment="{{item}}"></component-comment-cell>
+    </view>
+  </view>

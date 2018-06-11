@@ -1,0 +1,72 @@
+/* pages/order-detail/order-detail.wxss */
+.container {
+  padding-bottom: 160rpx;
+}
+.section{
+  padding: 0 30rpx;
+  background-color: #efefef;
+}
+.section .title{
+  display: block;
+  color: #666;
+  line-height: 1;
+  padding: 20rpx 0;
+}
+.list-card{
+  background-color: #fff;
+  padding: 0 30rpx;
+  border-radius: 20rpx;
+}
+.list-card .row{
+  display: block;
+  line-height: 1;
+  padding: 30rpx 0;
+  border-bottom: 1px solid #efefef;
+}
+.list-card textarea{
+  padding:10rpx 0;
+  line-height: 1.5;
+}
+.list-card .desc{
+  display: block;
+  padding: 20rpx 0;
+  line-height: 1.5;
+}
+
+.list {
+  background-color: #fff;
+  padding: 20rpx 30rpx;
+  border-bottom: 1px solid #eee;
+}
+
+.list .row {
+  display: flex;
+  padding: 10rpx 0;
+}
+
+.list .space-between {
+  justify-content: space-between;
+}
+
+.list .label {
+  color: rgb(149, 149, 156);
+  margin-right: 30rpx;
+}
+.btn-wrap{
+  display: flex;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+}
+.btn-wrap .btn{
+  flex: 0 0 100%;
+  height: 100rpx;
+  line-height: 100rpx;
+  background-color: #6cd8a5;
+  color: #fff;
+  text-align: center;
+}
+.btn-wrap .btn.grey{
+  color: #999;
+  background-color: #fff;
+}

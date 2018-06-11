@@ -1,0 +1,22 @@
+<!--pages/user-account/user-account.wxml-->
+<view class='container'>
+  <view class='top'>
+    <text class='money'>￥{{data.totalAcount}}</text>
+  </view>
+  <view class='list'>
+    <navigator class='row' url='../account-extract/account-extract'>
+      <view class='left'>
+        <image class='icon' src='/img/user/qb-tx.png'></image>
+        <text class='text'>提现</text>
+      </view>
+      <image class='arrow' src='/img/user/arrow.png'></image>
+    </navigator>
+    <navigator class='row' url='../account-list/account-list'>
+      <view class='left'>
+        <image class='icon' src='/img/user/qb-txjl.png'></image>
+        <text class='text'>提现记录</text>
+      </view>
+      <image class='arrow' src='/img/user/arrow.png'></image>
+    </navigator>
+  </view>
+</view>

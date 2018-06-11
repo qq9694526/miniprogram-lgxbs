@@ -1,0 +1,14 @@
+<!--pages/login/login.wxml-->
+<view class='submit'>
+    <view class='row'>
+      <input id='tel' class='tel' name="tel" placeholder='请输入手机号码' bindinput='bindTelInput'></input>
+    </view>
+    <view class='row row2'>
+      <input class='code' name="code" placeholder='请输入验证码' bindinput='bindCodeInput'></input>
+      <text wx:if="{{sent}}" class='code-btn' size='mini'>{{timeLeft}}s</text>
+      <text wx:else class='code-btn green' size='mini' bindtap='sendCode'>获取验证码</text>
+    </view>
+    <!-- 需要使用 button 来授权登录 以获取getUserInfo的权限-->
+    <button wx:if="{{canIUse}}" class='btn' open-type="getUserInfo" bindgetuserinfo="goIndex">确定</button>
+    <button wx:else class='btn' bindtap='goIndex'>确定</button>
+</view>

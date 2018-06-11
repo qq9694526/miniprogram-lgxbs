@@ -1,0 +1,35 @@
+<!--pages/classify/classify.wxml-->
+ <import src="../../tpl/nodata/nodata.wxml" /> 
+<view class='container'>
+  <view class='menu-wrap'>
+    <view class="menu {{index===activeIndex?'active':''}}" wx:for="{{menus}}" wx:key="item" bindtap='setCurrentActive' data-id='{{item.id}}' data-index="{{index}}">
+      <text>{{item.clfcName}}</text>
+    </view>
+  </view>
+  <view class='content'>
+    <scroll-view class='scroll-view' scroll-y="true">
+      <view wx:if="{{items.length===0}}" class='nodata-wrap'>
+        <template is="nodata" data="{{text:'该分类暂无师傅'}}" />
+      </view>
+      <view wx:else class='graphic-list'>
+        <navigator class='item' wx:for="{{items}}" wx:key="item" data-id='{{item.id}}' url='../worker-detail/worker-detail?id={{item.id}}'>
+
+          <image class='img' src='{{item.workPhoto}}'></image>
+          <view class='right'>
+            <view class='row1'>
+              <text>{{item.userName}}</text>
+            </view>
+            <view class='row2 text-ellipsis'>
+              <text>服务说明：{{item.workContent}}</text>
+            </view>
+            <view class='row3'>
+              <text class='price'>{{item.workPrice}}{{item.workPriceUnit}}</text>
+              <text class='time'>服务{{item.workCount}}次</text>
+            </view>
+          </view>
+        </navigator>
+      </view>
+    </scroll-view>
+
+  </view>
+</view>

@@ -1,0 +1,69 @@
+/* pages/account-extract/account-extract.wxss */
+page {
+  padding: 0 30rpx;
+  box-sizing: border-box;
+}
+.tip{
+  display: block;
+  line-height: 1;
+  padding: 20rpx 0;
+}
+.color-red{
+  color: red;
+}
+.cell {
+  display: flex;
+  justify-content: space-between;
+  background-color: #fff;
+  padding: 0 20rpx;
+  margin-bottom: 20rpx;
+  border-radius:20rpx;
+}
+
+.cell .lable {
+  flex: 0 0 150rpx;
+  height: 100rpx;
+  line-height: 100rpx;
+}
+
+.cell .input {
+  flex: 1;
+  height: 100rpx;
+  line-height: 100rpx;
+  text-align: right;
+}
+.input-wrap{
+  background-color: #fff;
+  padding: 60rpx 30rpx 30rpx 30rpx;
+  border-radius:20rpx;
+}
+.input-wrap .main{
+  display: flex;
+  line-height: 1;
+  align-items:baseline;
+  margin-bottom: 30rpx;
+}
+.input-wrap .label{
+  flex:0 0 70rpx;
+
+  font-size: 62rpx;
+  color: #f67575;
+}
+.input-wrap .input{
+  flex: 1;
+  font-size: 38rpx;
+}
+.input-wrap .text{
+  color: #999;
+  padding-left:10rpx;
+
+}
+.btn{
+  height: 100rpx;
+  line-height: 100rpx;
+  text-align: center;
+  background-color: #5fd4a2;
+  color: #fff;
+  border: none;
+  margin: 80rpx 0;
+}

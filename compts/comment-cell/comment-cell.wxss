@@ -1,0 +1,43 @@
+/* compts/comment-cell/comment-cell.wxss */
+.comment-cell{
+  padding: 20rpx 30rpx;
+  background-color: #fff;
+  margin-bottom: 20rpx;
+}
+.comment-cell .name{
+  height: 52rpx;
+  font-size: 32rpx;
+  color: #666;
+  margin-bottom: 10rpx;
+}
+.comment-cell .name image{
+  width: 52rpx;
+  height: 52rpx;
+  margin-right: 20rpx;
+  vertical-align: middle;
+  border-radius: 50%;
+}
+.comment-cell .info{
+  line-height: 1;
+  font-size: 20rpx;
+  color: #aaa;
+  margin-bottom: 10rpx;
+}
+.comment-cell .info text{
+  /* margin-right: 10rpx; */
+}
+.comment-cell .desc{
+  padding: 10rpx 0;
+  /* line-height: 1.5; */
+}
+.comment-cell .desc text{
+  font-size: 32rpx;
+  color: #333;
+}
+.comment-cell .picture{
+  display: flex;
+  justify-content: space-between;
+}
+.comment-cell .picture .img{
+  flex: 0 0 32%;
+}

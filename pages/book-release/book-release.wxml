@@ -1,0 +1,49 @@
+<!--pages/book-release/book-release.wxml-->
+
+<view class='container'>
+  <text class='tip'><text class='color-red'>*</text> 请您填写真实有效的信息，方便师傅与您联系。
+  </text>
+  <form class='list' bindsubmit='book'>
+    <view class='address' bindtap='chooseAddress'>
+      <image class='icon' src='/img/address.png'></image>
+      <view wx:if="{{address}}" class='content'>
+        <view class='row1'>
+          <text>{{address.name}}</text>
+          <text class='tel'>{{address.tel}}</text>
+        </view>
+        <text class='row2 text-ellipsis'>{{address.detail}}</text>
+      </view>
+      <view wx:else class='content'>
+        <text class='choose'>请选择服务地址</text>
+      </view>
+      <image class='arrow' src='/img/arrow.png'></image>
+    </view>
+    <view class='list'>
+      <view class='cell'>
+        <text class='lable'>服务名称</text>
+        <input class='input' name='advanceName' placeholder='请输出服务名称'></input>
+      </view>
+      <view class='cell'>
+        <text class='lable'>预约时间</text>
+        <view class='picker-wrap'>
+        <picker mode="date" value="{{date}}" start="2018-01-01" bindchange="bindDateChange">
+          <view class="picker">{{date}}</view>
+        </picker>
+        <picker mode="time" value="{{time}}" bindchange="bindTimeChange">
+          <view class="picker">{{time}}
+          </view>
+        </picker>
+        </view>
+      </view>
+      <view class='cell'>
+        <text class='lable'>总价</text>
+        <input class='input' name='orderPrice' placeholder='请输出服务价格'></input>
+      </view>
+      <view class='cell textarea-wrap'>
+        <text class='lable'>服务描述</text>
+        <textarea class='textarea' name='serviceDesc' placeholder='请输出服务简介'></textarea>
+      </view>
+    </view>
+    <button class='btn' formType='submit'>确认发布</button>
+  </form>
+</view>

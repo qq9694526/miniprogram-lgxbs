@@ -1,0 +1,145 @@
+/* pages/user-center/user-center.wxss */
+
+.user {
+  display: flex;
+  position: relative;
+  padding: 50rpx 40rpx 155rpx 40rpx;
+  background: -webkit-linear-gradient(left, #57d2a0, #8ee3ad);
+  color: #fff;
+  margin-bottom: 110rpx;
+}
+
+.userimg {
+  width: 105rpx;
+  height: 105rpx;
+  border-radius: 50%;
+  margin-right: 20rpx;
+}
+
+.userinfo {
+  display: flex;
+  flex-direction: column;
+  line-height: 1;
+  justify-content: space-around;
+}
+
+.username {
+  font-size: 40rpx;
+  color: #fff;
+}
+.user .arrow{
+   position: absolute;
+  top: 50rpx;
+  right: 40rpx; 
+  padding: 30rpx 10rpx;
+}
+.user .arrow image{
+
+  width: 26rpx;
+  height: 47rpx;
+}
+
+.row {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #eee;
+  padding: 30rpx;
+  background-color: #fff;
+}
+
+.row .left {
+  display: flex;
+  align-items: center;
+}
+
+.row .icon {
+  width: 39rpx;
+  height: 47rpx;
+  margin-right: 30rpx;
+}
+
+.row .arrow {
+  width: 25rpx;
+  height: 47rpx;
+  margin-right: 30rpx;
+  vertical-align: middle;
+}
+.row .right>text{
+  margin-right: 20rpx;
+  vertical-align: middle;
+}
+
+.book {
+  display: flex;
+  background-color: #fff;
+  margin-bottom: 10rpx;
+  width: 90%;
+  margin: 0 auto;
+  border-radius: 20rpx;
+  position: absolute;
+  top: 200rpx;
+  left: 0;
+  right: 0;
+  box-shadow: 0px 0px 5px #ccc;
+}
+
+.book .item {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  flex: 0 0 50%;
+  width: 50%;
+  text-align: center;
+  padding: 40rpx 0;
+}
+
+.book .icon {
+  width: 58rpx;
+  height: 58rpx;
+  margin: 0 auto;
+  margin-bottom: 20rpx;
+}
+
+.order {
+  background-color: #fff;
+  margin-bottom: 20rpx;
+}
+
+.order .title {
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1px solid #efefef;
+  padding: 20rpx 30rpx;
+  box-sizing: border-box;
+}
+.order .title text{
+  vertical-align: middle;
+}
+.order .title .arrow {
+  width: 25rpx;
+  height: 47rpx;
+  margin-right: 30rpx;
+  vertical-align: middle;
+}
+
+.order .menu {
+  display: flex;
+}
+
+.order .menu .item {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  flex: 0 0 33%;
+  text-align: center;
+  padding: 30rpx 0;
+}
+
+.order .icon {
+  width: 50rpx;
+  height: 50rpx;
+  margin: 0 auto;
+  margin-bottom: 20rpx;
+}

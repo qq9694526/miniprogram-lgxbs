@@ -1,0 +1,81 @@
+/* pages/order-list/order-list.wxss */
+@import "../../tpl/nodata/nodata.wxss";
+.graphic-list{
+  padding: 0;
+}
+.graphic-list .item-wrap{
+  padding: 30rpx;
+  background-color: #fff;
+  margin-top: 20rpx;
+}
+.graphic-list .item{
+  padding: 0;
+  border:0;
+  padding-bottom:20rpx;
+  border-bottom: 1px solid #efefef;
+  margin-bottom: 0;
+
+}
+.graphic-list .btn-wrap{
+  padding-top: 20rpx;
+  text-align: right;
+}
+.graphic-list .btn-wrap .btn-green{
+  display: inline-block;
+  font-size: 32rpx;
+  padding: 15rpx 35rpx;
+  border-radius: 80rpx;
+  color: #57d2a0;
+  line-height: 1;
+  background-color: #fff;
+  border: 1px solid #57d2a0;
+}
+.book-card {
+  padding: 30rpx;
+}
+
+.book-card .item {
+  border-radius: 20rpx;
+  padding: 30rpx;
+  background-color: #fff;
+  margin-bottom: 20rpx;
+}
+
+.book-card .title {
+  display: flex;
+  justify-content: space-between;
+}
+
+.book-card .title text {
+  font-size: 30rpx;
+}
+
+.book-card .title .color-green {
+  color: #5dd4a1;
+}
+
+.book-card .row {
+  color: #666;
+  line-height: 32rpx;
+  margin:20rpx 0;
+}
+
+.book-card .row .icon {
+  width: 32rpx;
+  height: 32rpx;
+  vertical-align: middle;
+  margin-right: 20rpx;
+}
+.book-card .btn-wrap{
+  text-align: right;
+  padding-top: 10rpx;
+}
+.book-card .btn{
+  display: inline-block;
+  font-size: 32rpx;
+  padding: 15rpx 35rpx;
+  border-radius: 80rpx;
+  color: #fff;
+  line-height: 1;
+  background-color: #57d2a0;
+}

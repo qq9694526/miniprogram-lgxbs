@@ -1,0 +1,31 @@
+<!--pages/user-detail/user-detail.wxml-->
+<view class='container'>
+  <form class='list' bindsubmit='book'>
+    <view class='list'>
+      <view class='cell'>
+        <text class='lable'>姓名:</text>
+        <input class='input' name='serviceName' value='{{worker.userName}}' disabled='true'></input>
+      </view>
+      <view class='cell'>
+        <text class='lable'>电话:</text>
+        <input class='input' name='serviceName' value='{{worker.userMobile}}' disabled='true'></input>
+      </view>
+      <view class='cell'>
+        <text class='lable'>年龄:</text>
+        <input class='input' name='serviceName' value='{{worker.userAge}}' disabled='true'></input>
+      </view>
+      <view class='cell'>
+        <text class='lable'>工种:</text>
+        <input class='input' name='serviceName' value='{{worker.workCateName}}' disabled='true'></input>
+      </view>
+      <view class='cell'>
+        <text class='lable'>工作经验:</text>
+        <input class='input' name='serviceName' value='{{worker.userExpeience}}' disabled='true'></input>
+      </view>
+      <view class='cell textarea-wrap'>
+        <text class='lable'>个人说明</text>
+        <textarea class='textarea' name='serviceDesc' disabled='true'>{{worker.userDesc}}</textarea>
+      </view>
+    </view>
+  </form>
+</view>

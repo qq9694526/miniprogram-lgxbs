@@ -1,0 +1,20 @@
+<!--compts/comment-cell/comment-cell.wxml-->
+<view class='comment-cell'>
+  <view class='name'>
+    <image src='{{comment.userPhoto}}'></image>
+    <text>{{comment.userName}}</text>
+  </view>
+  <view class='info'>
+    <text>{{comment.time}}</text>
+    <text> 工种：{{comment.workCateName}}</text>
+    <text> 服务名称：{{comment.serviceName}}</text>
+  </view>
+  <view class='desc'>
+    <text>{{comment.evaluationContent}}</text>
+  </view>
+  <view class='picture'>
+    <image wx:if="{{comment.evaluationPicture1}}" class='img' src='{{comment.evaluationPicture1}}' mode='widthFix'></image>
+    <image wx:if="{{comment.evaluationPicture2}}" class='img' src='{{comment.evaluationPicture2}}' mode='widthFix'></image>
+    <image wx:if="{{comment.evaluationPicture3}}" class='img' src='{{comment.evaluationPicture3}}' mode='widthFix'></image>
+  </view>
+</view>

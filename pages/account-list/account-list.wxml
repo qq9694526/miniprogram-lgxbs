@@ -1,0 +1,19 @@
+<!--pages/account-list/account-list.wxml-->
+<import src="../../tpl/nodata/nodata.wxml" />
+<view class='container'>
+  <view wx:if="{{list.length===0}}" class='notask-wrap'>
+    <template is="nodata" data="{{text:'您还没有提现记录'}}" />
+  </view>
+  <view wx:else class='list'>
+    <navigator wx:for='{{list}}' class='item' url='../account-detail/account-detail?id={{item.id}}'>
+      <view class='row row1'>
+        <text>钱包余额提现</text>
+        <text class='color-green'>{{item.userMoney}}</text>
+      </view>
+      <view class='row row2'>
+        <text>{{item.time}}</text>
+        <text>{{item.handelResult==0?"提现中":"提现成功"}} </text>
+      </view>
+    </navigator>
+  </view>
+</view>

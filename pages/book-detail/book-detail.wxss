@@ -1,0 +1,34 @@
+/* pages/book-detail/book-detail.wxss */
+page{
+  padding-bottom: 120rpx;
+}
+.section{
+  padding: 0 30rpx;
+  background-color: #efefef;
+}
+.section .title{
+  display: block;
+  color: #666;
+  line-height: 1;
+  padding: 20rpx 0;
+}
+.list-card{
+  background-color: #fff;
+  padding: 0 30rpx;
+  border-radius: 20rpx;
+}
+.list-card .row{
+  display: block;
+  line-height: 1;
+  padding: 30rpx 0;
+  border-bottom: 1px solid #efefef;
+}
+.list-card textarea{
+  padding:10rpx 0;
+  line-height: 1.5;
+}
+.list-card .desc{
+  display: block;
+  padding: 20rpx 0;
+  line-height: 1.5;
+}

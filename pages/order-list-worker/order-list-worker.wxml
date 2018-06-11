@@ -1,0 +1,38 @@
+<!--pages/book-list/book-list.wxml-->
+<import src="../../tpl/nodata/nodata.wxml" />
+<view class='container'>
+  <view class='tabbar' bindtap='changeItem'>
+    <text class='item {{activeItem==0?"active":""}}' data-index='0'>未完成</text>
+    <text class='item {{activeItem==1?"active":""}}' data-index='1'>已完成</text>
+  </view>
+  <view class='book-card'>
+    <view wx:if="{{list[activeItem].length===0}}" class='notask-wrap'>
+      <template is="nodata" data="{{text:'您还没有相关订单'}}" />
+    </view>
+    <view wx:else>
+      <navigator wx:for="{{list[activeItem]}}" class='item' url='../order-detail/order-detail?id={{item.id}}&isworker=1'>
+        <view class='title'>
+          <text>预约状态</text>
+          <text class='color-green'>{{orderStateArr[item.orderState]}}</text>
+        </view>
+        <view class='row'>
+          <image class='icon' src='/img/order/name.png'></image>
+          <text>{{item.advanceName||item.serviceName}}</text>
+        </view>
+        <view class='row'>
+          <image class='icon' src='/img/order/time.png'></image>
+          <text>{{item.serviceTime||item.time}}</text>
+        </view>
+        <view class='row text-ellipsis'>
+          <image class='icon' src='/img/order/address.png'></image>
+          <text>{{item.userAddress}}</text>
+        </view>
+        <!-- <view class='btn-wrap'>
+          <text wx:if="{{item.orderState==1}}" class='btn' bindtap='cancelOrder'>取消订单</text>
+          <text wx:elif="{{item.orderState==2}}" class='btn'>确认完工</text>
+          <text wx:elif="{{item.orderState==4}}" class='btn'>评价</text>
+        </view> -->
+      </navigator>
+    </view>
+  </view>
+</view>

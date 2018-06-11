@@ -1,0 +1,53 @@
+/* pages/account-detail/account-detail.wxss */
+page{
+  background-color: #fff;
+  padding: 0 30rpx;
+  box-sizing: border-box;
+}
+.top{
+  border-bottom: 1px solid #efefef;
+}
+.top .label{
+  display: block;
+  line-height: 1;
+  padding-top: 20rpx;
+}
+.top .main{
+  padding: 30rpx;
+}
+.section .line{
+  height: 45rpx;
+  width: 5rpx;
+  background-color: #57d2a0;
+  margin-left:18rpx;
+
+}
+.section {
+  margin-bottom: 0;
+}
+.section .row{
+ margin-top:-5rpx;
+}
+.section .img{
+  width: 40rpx;
+  height: 40rpx;
+  vertical-align: middle;
+  margin-right: 20rpx;
+}
+.section text{
+  vertical-align: middle;
+}
+.section.grey .line{
+  background-color: #999;
+}
+.section.grey .text{
+  color: #999;
+}
+.list .row{
+  display: flex;
+  justify-content: space-between;
+  height: 100rpx;
+  line-height: 100rpx;
+  border-bottom: 1px solid #efefef;
+
+}

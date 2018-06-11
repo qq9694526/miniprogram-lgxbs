@@ -1,0 +1,25 @@
+<!--pages/account-extract/account-extract.wxml-->
+<view class='container'>
+  <text class='tip'><text class='color-red'>*</text>为保障资金安全请确认银行卡信息
+  </text>
+  <view class='list'>
+    <view class='cell'>
+      <text class='lable'>持卡人姓名</text>
+      <input class='input' name='name' value='{{worker.userName}}' disabled='true'></input>
+    </view>
+    <view class='cell'>
+      <text class='lable'>银行卡号</text>
+      <input class='input' name='card' value='{{worker.workIdCard}}' disabled='true'></input>
+    </view>
+  </view>
+  <form bindsubmit='extract'>
+    <view class='input-wrap'>
+      <view class='main'>
+        <text class='label'>￥</text>
+        <input class='input' name='availAcount' placeholder='请输入提现金额'></input>
+      </view>
+      <text class='text'>钱包余额：{{data.totalAcount}}元</text>
+    </view>
+    <button class='btn' form-type='submit'>确认提现</button>
+  </form>
+</view>

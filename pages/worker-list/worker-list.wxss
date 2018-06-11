@@ -1,0 +1,51 @@
+/* pages/classify/classify.wxss */
+
+ @import "../../tpl/nodata/nodata.wxss"; 
+
+page {
+  height: 100%;
+}
+
+.container {
+  display: flex;
+  height: 100%;
+}
+
+.menu-wrap {
+  flex: 0 0 150rpx;
+  border-right: 1px solid #eee;
+  background-color: #fff;
+}
+
+.menu {
+  width: 150rpx;
+  padding: 36rpx 0;
+  text-align: center;
+  background-color: #fff;
+  border-bottom: 1px solid #efefef;
+  color: #666;
+}
+
+.menu.active {
+  background-color: #efefef;
+}
+
+.content {
+  flex: 1 ;
+  height: 100%;
+  width: 1rpx;
+}
+
+.content .scroll-view {
+  height: 100%;
+  width: 100%;
+}
+.graphic-list{
+  display: flex;
+  flex: 1;
+  flex-wrap: wrap;
+}
+.graphic-list .img {
+  flex: 0 0 160rpx;
+  height: 120rpx;
+}

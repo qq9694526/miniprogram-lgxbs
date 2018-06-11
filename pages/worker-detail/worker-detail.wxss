@@ -1,0 +1,55 @@
+/* pages/worker-detail/worker-detail.wxss */
+page{
+  padding-bottom: 100rpx;
+}
+.section text{
+  line-height: 1;
+}
+.section{
+  color: #666;
+}
+.section .title{
+  display: block;
+  padding: 20rpx 30rpx;
+  border-bottom: 1px solid #efefef;
+}
+.section-main {
+  padding: 20rpx 30rpx;
+}
+
+.section-main .price {
+  font-size: 42rpx;
+  color: #f99615;
+  margin-top: 20rpx;
+}
+.section-text{
+  color: #666;
+}
+.section-text .text{
+  display: block;
+  line-height: 1.5;
+  padding: 10rpx 30rpx;
+}
+.section-list .list{
+  padding: 10rpx 30rpx;
+}
+.section-list .row{
+  display: flex;
+  justify-content: space-between;
+  padding: 20rpx 0;
+}
+.section-list .row text{
+  font-size: 28rpx;
+}
+.section-comment .btn-wrap{
+  text-align: center;
+}
+.section-comment .btn{
+  display: inline-block;
+  margin: 20rpx auto 40rpx auto;
+  font-size: 32rpx;
+  padding: 30rpx 110rpx;
+  border-radius: 100rpx;
+  border:1px solid #57d2a0;
+  color: #57d2a0;
+}

@@ -1,0 +1,57 @@
+<!--pages/worker-detail/worker-detail.wxml-->
+<view class='container'>
+  <swiper class="section" autoplay='true' indicator-dots="true">
+    <swiper-item wx:for="{{worker.bannerList}}">
+      <image src="{{item}}" class="slide-image" style='width:100%' mode='widthFix' />
+    </swiper-item>
+  </swiper>
+  <view class='section section-main'>
+    <text>{{worker.workTitle}}</text>
+    <view class='price'>
+      <text>{{worker.workPrice}}</text>
+      <text>{{worker.workPriceUnit}}</text>
+    </view>
+  </view>
+  <view class='section section-text'>
+    <text class='title'>服务内容</text>
+    <text class='text'>{{worker.workContent}}</text>
+  </view>
+  <view class='section section-list'>
+    <text class='title'>工人信息</text>
+    <view class='list'>
+      <view class='row'>
+        <text>姓名</text>
+        <text>{{worker.userName}}</text>
+      </view>
+      <view class='row'>
+        <text>年龄</text>
+        <text>{{worker.userAge}}岁</text>
+      </view>
+      <view class='row'>
+        <text>工种</text>
+        <text>{{worker.workCateName}}</text>
+      </view>
+      <view class='row'>
+        <text>工作经验</text>
+        <text>{{worker.userExpeience}}年</text>
+      </view>
+      <view class='row'>
+        <text>工作状态</text>
+        <text>{{worker.userState==0?"空闲":"忙碌"}}</text>
+      </view>
+    </view>
+  </view>
+  <view class='section section-text'>
+    <text class='title'>个人说明</text>
+    <text class='text'>{{worker.userDesc}}</text>
+  </view>
+  <view wx:if="{{worker.userEvaluationEntity}}" class='section section-comment'>
+    <text class='title'>客户评价</text>
+    <component-comment-cell comment="{{worker.userEvaluationEntity}}" title='我是标题'></component-comment-cell>
+    <view class='btn-wrap'>
+      <navigator class='btn' url='../worker-comment/worker-comment?id={{worker.id}}'>查看全部评论</navigator>
+    </view>
+  </view>
+</view>
+<view wx:if="{{worker.userState==0}}" class='btn-fixed-bottom' bindtap='goOrder'>立即预约</view>
+<view wx:else class='btn-fixed-bottom' bindtap='showBusy'>立即预约</view>

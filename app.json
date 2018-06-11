@@ -1,0 +1,28 @@
+{
+  "pages": [
+    "pages/start/start",
+    "pages/login/login",
+    "pages/index/index",
+    "pages/comment-detail/comment-detail",
+    "pages/account-detail/account-detail",
+    "pages/user-account/user-account",
+    "pages/user-center/user-center",
+    "pages/order-confrim/order-confrim",
+    "pages/book-release/book-release",
+    "pages/order-detail/order-detail",
+    "pages/order-list/order-list",
+    "pages/order-list-worker/order-list-worker",
+    "pages/worker-detail/worker-detail",
+    "pages/worker-list/worker-list",
+    "pages/worker-comment/worker-comment",
+    "pages/account-extract/account-extract",
+    "pages/account-list/account-list",
+    "pages/user-detail/user-detail"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "WeChat",
+    "navigationBarTextStyle": "black"
+  }
+}
