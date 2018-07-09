@@ -37,7 +37,7 @@
       </view>
       <view class='cell'>
         <text class='lable'>总价</text>
-        <input class='input' name='orderPrice' placeholder='请输出服务价格'></input>
+        <input class='input' name='orderPrice' placeholder='请输出服务价格，可不填，默认面议'></input>
       </view>
       <view class='cell textarea-wrap'>
         <text class='lable'>服务描述</text>

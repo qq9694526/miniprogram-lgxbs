@@ -36,16 +36,15 @@ Page({
       return
     }
     const { id: userId } = app.globalData.user,
-      { name: userName, tel: userMobile, detail: userAddress } = this.data.address,
-      { advanceName, orderPrice, serviceDesc } = e.detail.value,
+      { name: userName, tel: userMobile, detail: userAddress } = this.data.address;
+    let  { advanceName, orderPrice, serviceDesc } = e.detail.value,
       serviceTime = this.data.date + ' ' + this.data.time;
     if (!advanceName) {
       wx.showToast({ title: '请填写服务名称', icon: 'none' })
       return
     }
     if (!orderPrice) {
-      wx.showToast({ title: '请填写服务价格', icon: 'none' })
-      return
+      orderPrice="面议";
     }
     wx.showLoading();
     util.post('api/order/advance', {
