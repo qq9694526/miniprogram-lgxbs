@@ -31,19 +31,19 @@ Page({
       })
       return
     }
+    this.setSent();
     util.get(`api/send_verify/${tel}`).then((data) => {
       if (data && data.rtnCode == "1000") {
         const { verifyCode } = data;
         console.log(tel)
         this.setData({
-          verifyCode,
-          sent: true
+          verifyCode
         })
         wx.showToast({
           title: '已发送',
           icon: 'none'
         })
-        this.setSent();
+        
       }
     })
   },
@@ -80,6 +80,10 @@ Page({
   },
   setSent() {
     var self = this;
+    self.setData({
+      sent:true,
+      timeLeft: this.data.timeLeft
+    })
     var interval = setInterval(() => {
       let timeLeft = this.data.timeLeft - 1;
       if (timeLeft > 0) {
